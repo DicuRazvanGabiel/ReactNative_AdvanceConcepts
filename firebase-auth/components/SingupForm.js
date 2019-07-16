@@ -34,7 +34,7 @@ export default class SingupForm extends Component {
 
   render() {
     return (
-      <View style={{ width: 90 + "%" }}>
+      <View style={{ marginBottom: 10, width: 90 + '%' }}>
         <View style={{ marginBottom: 10 }}>
           <Input
             placeholder="0123 456 789"
