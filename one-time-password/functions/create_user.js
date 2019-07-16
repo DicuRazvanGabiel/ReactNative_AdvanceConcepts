@@ -5,7 +5,7 @@ module.exports = (req, res) => {
         return res.status(422).send({ error: 'Bad input' });
     }
 
-    const phone = String(req.body.phone).replace(/[^\d]/g,"");
+    const phone = String(req.body.phone);
 
     admin.auth().createUser({ uid: phone })
         .then(user => res.send(user))
