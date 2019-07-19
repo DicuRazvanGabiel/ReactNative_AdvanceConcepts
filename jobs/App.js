@@ -1,12 +1,14 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+
+import React, { Component } from 'react'
 import { 
   createSwitchNavigator, 
   createAppContainer, 
   createBottomTabNavigator, 
   createStackNavigator 
 } from 'react-navigation';
+import { Provider } from 'react-redux';
 
+import store from "./store";
 import  AuthScreen from './screens/AuthScreen'
 import WelcomeScreen from './screens/WelcomeScreen';
 import MapScreen from './screens/MapScreen';
@@ -30,7 +32,18 @@ const switchkNavigator = createSwitchNavigator({
   WelcomeScreen,
   main: bottomTabNavigator
 },{
-  initialRouteName: 'WelcomeScreen',
+  //aici trebuie WelcomeScreeen
+  initialRouteName: 'main',
 });
 
-export default createAppContainer(switchkNavigator);
+const AppContainer = createAppContainer(switchkNavigator);
+
+export default class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <AppContainer />
+      </Provider>
+    )
+  }
+}

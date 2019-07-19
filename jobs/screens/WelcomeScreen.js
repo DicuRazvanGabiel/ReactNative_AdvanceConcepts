@@ -9,10 +9,15 @@ const SLIDE_DATA = [
 ];
 
 export default class WelcomeScreen extends Component {
+  
+  navigateToAuth= () => {
+    this.props.navigation.navigate('AuthScreen')
+  }
+
   render() {
     return (
-      <View style={styles.mainContainer}>
-        <Slides data={SLIDE_DATA} />
+      <View>
+        <Slides data={SLIDE_DATA} lastSlideButton={this.navigateToAuth}/>
       </View>
     );
   }
