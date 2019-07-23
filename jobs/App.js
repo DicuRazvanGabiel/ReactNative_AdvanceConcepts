@@ -33,7 +33,7 @@ const switchkNavigator = createSwitchNavigator({
   main: bottomTabNavigator
 },{
   //aici trebuie WelcomeScreeen
-  initialRouteName: 'main',
+  initialRouteName: 'WelcomeScreen',
 });
 
 const AppContainer = createAppContainer(switchkNavigator);
